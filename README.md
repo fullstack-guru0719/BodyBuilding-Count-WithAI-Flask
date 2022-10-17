@@ -5,3 +5,9 @@ This project is a machine learning project that imports physical training record
 ![Sit Up01 ](sit-up01.png)
 
 ![Sit Up02 ](sit-up02.png)
+
+Users only click button
+
+# setup
+
+python app.py
