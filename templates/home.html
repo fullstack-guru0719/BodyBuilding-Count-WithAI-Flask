@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+</head>
+<body>
+    <div style="padding: 70px;">
+        <div style="width: 640px;">
+            <button class="btn-hover color-1" onclick="location.href='http://localhost:5000/sit_up'">Sit-Up</button><br>
+            <button class="btn-hover color-2" onclick="location.href='http://localhost:5000/pull_up'">Pull-Up</button><br>
+            <button class="btn-hover color-3" onclick="location.href='http://localhost:5000/push_up'">Push-Up</button><br>
+            <button class="btn-hover color-1" onclick="location.href='http://localhost:5000/squat'">Squat</button><br>
+            <button class="btn-hover color-2" onclick="location.href='http://localhost:5000/walk'">Walking</button>
+        </div>
+    </div>
+</body>
+</html>

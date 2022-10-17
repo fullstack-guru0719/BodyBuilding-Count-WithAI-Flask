@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pull-up</title>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        .left {
+        padding: 20px;
+        float: left;
+        width: 45%; /* The width is 20%, by default */
+        }
+
+        .main {
+        background-color: #f1f1f1;
+        padding: 20px;
+        float: left;
+        width: 60%; /* The width is 60%, by default */
+        }
+
+        .right {
+        padding: 20px;
+        float: left;
+        width: 55%; /* The width is 20%, by default */
+        }
+
+        /* Use a media query to add a break point at 800px: */
+        @media screen and (max-width: 800px) {
+            .left, .main, .right {
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="left">
+            <h2 style="margin-top: 0px; padding-left: 10%; padding-bottom: 0px; color: rgb(73, 71, 71); font-size: 80px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif">Pull Up</h2>
+            <p style="text-align: center; font-size: 300px; color: rgb(73, 71, 71); margin: 0px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif" id="counter">
+            </p>
+        </div>
+        <div class="right">
+            <div style="text-align: left; margin-top: 0px; padding-right: 10%;">
+                <img src="{{url_for('static', filename='image/background.png')}}" style=" width: 800px; height: 480px;" id="image">
+            </div>
+        </div>
+    </div>
+    <div style="width: 45%;">
+        <div class="buttons">
+            <button class="btn-hover color-1" style="float: left;" onclick="start_video()">START</button>
+            <button class="btn-hover color-2" style="float: right;" onclick="location.href='http://localhost:5000/save_result'">STOP</button><br>
+            <div style="text-align: center;">
+                <button class="btn-hover color-3" onclick="location.href='http://localhost:5000/save_result'">SAVE RESULTS</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var intervalID = setInterval(update_values, 500);
+        function update_values(){
+            $.getJSON("http://localhost:5000" + "/count",
+                function(data){
+                    $("#counter").text(data.result);
+                });
+        };
+
+        function start_video(){
+            document.getElementById("image").src = "{{ url_for('video') }}";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sit-up</title>
+    <link rel="stylesheet" href="../static/css/mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        .left {
+        padding: 20px;
+        float: left;
+        width: 45%; /* The width is 20%, by default */
+        }
+
+        .main {
+        background-color: #f1f1f1;
+        padding: 20px;
+        float: left;
+        width: 60%; /* The width is 60%, by default */
+        }
+
+        .right {
+        padding: 20px;
+        float: left;
+        width: 55%; /* The width is 20%, by default */
+        }
+
+        /* Use a media query to add a break point at 800px: */
+        @media screen and (max-width: 800px) {
+            .left, .main, .right {
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="left">
+            <h2 style="margin-top: 0px; padding-left: 10%; padding-bottom: 0px; color: rgb(73, 71, 71); font-size: 80px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif">Result</h2>
+            <p style="text-align: center; font-size: 300px; color: rgb(73, 71, 71); margin: 0px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif" id="counter">
+            {{result}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
